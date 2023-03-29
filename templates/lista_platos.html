@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de platos</title>
+</head>
+<body>
+        
+    <table>
+        <tr>
+            <td>
+                nombre
+            </td>
+            <td>
+                descripcion
+            </td>
+            <td>
+                categoria
+            </td>
+            <td>
+                precio
+            </td>
+            <td>
+                um
+            </td>
+        </tr>
+        {%for plato in platos%}
+        <tr>
+            <td>{{plato.nombre}}</td>
+            <td>{{plato.descripcion}}</td>
+            <td>{{plato.categoria}}</td>
+            <td>{{plato.precio}}</td>
+            <td>{{plato.um}}</td>
+            <td><a href="/actualizar/{{plato.id}}">Actualizar</a> </td> 
+            <td><a href="/eliminar/{{plato.id}}">Eliminar</a> </td> 
+        </tr>
+        {% endfor %}
+    </table> 
+</body>
+</html>

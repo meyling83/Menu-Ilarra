@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="{{url_for('static',filename='/css/style.css')}}" rel="stylesheet">
+</head>
+<body>
+   
+    <div class="contenedor">
+       
+        <h1>Ilarra</h1>
+        
+        <h2>Pescados</h2>
+        <table>
+            {%for plato in pescados%}
+        <tr>
+            <td><p>{{plato.nombre}} {{plato.descripcion}}</p></td>
+            <td><p>{{"%.2f" % plato.precio}}{{plato.um}}</p></td>
+           
+        </tr>
+        {% endfor %}
+        </table>
+        <h2>Carnes</h2>
+        <table>
+            {%for plato in carnes%}
+        <tr>
+            <td><p>{{plato.nombre}} {{plato.descripcion}}</p></td>
+            <td><p>{{"%.2f" % plato.precio}}{{plato.um}}</p></td>
+           
+        </tr>
+        {% endfor %}
+        </table>
+        <div class="centrado">
+            <p>Puede acompañar su plato con ...</p>
+           
+            <p>{{guarniciones}}</p>
+           
+        </div>
+    </div>
+
+</body>
+</html>
