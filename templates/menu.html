@@ -8,38 +8,53 @@
     <link href="{{url_for('static',filename='/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
-   
+
     <div class="contenedor">
-       
-        <h1>Ilarra</h1>
+        <div class="centrado">
+            <h1>Ilarra</h1>
+        </div>
         
-        <h2>Pescados</h2>
         <table>
+        <tr>
+            <td colspan=2><h2>Pescados</h2> </td>
+        </tr>    
+        <tr>
             {%for plato in pescados%}
+        
+            <td><p>{{plato.nombre}} {{plato.descripcion}}</p></td>
+            <td><p>{{"%.2f" % plato.precio}}{{plato.um}}</p></td>
+        
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan=2><h2>Carnes</h2> </td>
+        </tr>  
+        {%for plato in carnes%}
         <tr>
             <td><p>{{plato.nombre}} {{plato.descripcion}}</p></td>
             <td><p>{{"%.2f" % plato.precio}}{{plato.um}}</p></td>
-           
+        
         </tr>
         {% endfor %}
         </table>
-        <h2>Carnes</h2>
-        <table>
-            {%for plato in carnes%}
-        <tr>
-            <td><p>{{plato.nombre}} {{plato.descripcion}}</p></td>
-            <td><p>{{"%.2f" % plato.precio}}{{plato.um}}</p></td>
-           
-        </tr>
-        {% endfor %}
-        </table>
+        
         <div class="centrado">
             <p>Puede acompañar su plato con ...</p>
-           
+        
             <p>{{guarniciones}}</p>
-           
+        
         </div>
-    </div>
+        <br>
+        <br>
+        <div class="centrado">
+            {%for plato in sugerencias%}
+            <p class="resaltado">({{plato.descripcion}})</p>
+            {% endfor %}
 
+        
+        </div>
+        <a href="/lista_platos">Editar Menú</a>
+    </div>
+    
 </body>
 </html>
