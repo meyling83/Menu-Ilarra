@@ -5,26 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de platos</title>
+    <link href="{{url_for('static',filename='/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
         
-    <table>
+    <table id="platos">
         <tr>
-            <td>
-                nombre
-            </td>
-            <td>
-                descripcion
-            </td>
-            <td>
-                categoria
-            </td>
-            <td>
-                precio
-            </td>
-            <td>
-                um
-            </td>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Categoría
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                UM
+            </th>
+            <th>
+                
+            </th>
+            <th>
+                
+            </th>
         </tr>
         {%for plato in platos%}
         <tr>
@@ -38,5 +45,9 @@
         </tr>
         {% endfor %}
     </table> 
+    <br>
+    <a href="/insertar_plato">Adicionar</a>
+    <br>
+    <a href="/">Regresar al Menú del día</a>
 </body>
 </html>
